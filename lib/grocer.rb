@@ -18,7 +18,7 @@ cart.each do |key|
     ccart[0][:count]=1
   end
   ccart.each do |ckey|
-    
+    if ccart[i][:item]
   end
 end
 end
