@@ -11,14 +11,21 @@ end
 
 def consolidate_cart(cart)
 con_cart=[]
-i=0
-cart.each do |key|
-if con_cart[i]===cart[index]
-  con_cart[index-1][:count]+=1
-  binding.pry
-else
- con_cart.push key
- con_cart[index][:count]=1
+cart.each_with_index do |key,index|
+  if con_cart===[]
+    con_cart.push key
+    con_cart[0][:count]=1
+  end
+  if con_cart[index]===cart[index]
+      con_cart.each_with_index do |ckey,cindex|
+        if ckey[:item]===con_cart[index-1][:item]
+          con_cart[cindex][:count]+=1
+        end
+      end
+    else
+        con_cart.push key
+        con_cart[index-1][:count]=1
+    end
 end
-end
+return con_cart
 end
