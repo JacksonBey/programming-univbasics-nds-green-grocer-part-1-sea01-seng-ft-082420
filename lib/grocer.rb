@@ -27,4 +27,5 @@ cart.each do |key|
     end
   end
 end
+binding.pry
 end
