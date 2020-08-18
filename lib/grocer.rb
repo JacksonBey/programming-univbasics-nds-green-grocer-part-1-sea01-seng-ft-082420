@@ -18,7 +18,7 @@ cart.each do |key|
     ccart[0][:count]=1
   end
   ccart.each do |ckey|
-    binding.pry
+    
   end
 end
 end
